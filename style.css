@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700;800&family=Tajawal:wght@400;500;700&display=swap');
+
+:root {
+  --forest: #1F3A34;
+  --forest-dark: #142623;
+  --mustard: #D9A441;
+  --mustard-dark: #B8842E;
+  --ivory: #FBF9F4;
+  --brown: #5C3A21;
+  --line: #E4DCC8;
+  --danger: #B23A2E;
+  --success: #2E7D4F;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--brown);
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+.brand {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 800;
+  color: var(--forest);
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  background: var(--forest);
+  padding: 18px 0;
+}
+
+.brand {
+  color: var(--ivory);
+  font-size: 22px;
+  text-align: center;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 32px 0 8px;
+  text-align: center;
+}
+
+.hero img {
+  border-radius: 18px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+.hero h1 {
+  font-size: 26px;
+  margin-top: 22px;
+}
+
+.hero p.tagline {
+  font-size: 16px;
+  color: var(--brown);
+  opacity: .85;
+  margin-top: 8px;
+}
+
+/* ---------- Offers ---------- */
+.offers {
+  padding: 28px 0 8px;
+}
+
+.offers h2 {
+  font-size: 19px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.offer-card {
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 10px;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  cursor: pointer;
+  transition: border-color .15s ease, transform .15s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-2px);
+}
+
+.offer-card.selected {
+  border-color: var(--mustard);
+  box-shadow: 0 0 0 3px rgba(217, 164, 65, .18);
+}
+
+.offer-card .badge {
+  position: absolute;
+  top: -11px;
+  right: 50%;
+  transform: translateX(50%);
+  background: var(--mustard);
+  color: var(--forest-dark);
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.offer-card .qty {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--forest);
+}
+
+.offer-card .price {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--brown);
+  margin-top: 6px;
+}
+
+.offer-card .price span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ---------- Form ---------- */
+.order-section {
+  padding: 34px 0 60px;
+}
+
+.order-section h2 {
+  font-size: 19px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--forest);
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 15px;
+  background: #fff;
+  color: var(--brown);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--mustard);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: var(--mustard);
+  color: var(--forest-dark);
+  font-family: 'Cairo', sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background .15s ease;
+}
+
+.submit-btn:hover {
+  background: var(--mustard-dark);
+}
+
+.submit-btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.total-line {
+  text-align: center;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  color: var(--forest);
+  margin: 16px 0;
+  font-size: 15px;
+}
+
+.total-line strong {
+  font-size: 20px;
+}
+
+.form-msg {
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-top: 14px;
+  display: none;
+}
+
+.form-msg.ok {
+  display: block;
+  background: #E4F3EA;
+  color: var(--success);
+}
+
+.form-msg.err {
+  display: block;
+  background: #FBE6E3;
+  color: var(--danger);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  color: var(--brown);
+  opacity: .6;
+}
+
+/* ---------- Admin ---------- */
+.admin-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.login-box {
+  max-width: 360px;
+  margin: 80px auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1.5px solid var(--forest);
+  color: var(--forest);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.orders-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  text-align: right;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+th {
+  background: var(--forest);
+  color: var(--ivory);
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Cairo', sans-serif;
+}
+
+.status-pending {
+  background: #FCEFD8;
+  color: var(--mustard-dark);
+}
+
+.status-confirmed {
+  background: #E4F3EA;
+  color: var(--success);
+}
+
+.status-cancelled {
+  background: #FBE6E3;
+  color: var(--danger);
+}
+
+.action-btns {
+  display: flex;
+  gap: 6px;
+}
+
+.action-btns button {
+  border: none;
+  border-radius: 7px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Cairo', sans-serif;
+}
+
+.btn-confirm {
+  background: var(--success);
+  color: #fff;
+}
+
+.btn-cancel {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-pending {
+  background: var(--mustard);
+  color: var(--forest-dark);
+}
+
+.btn-delete {
+  background: transparent;
+  border: 1.5px solid var(--danger) !important;
+  color: var(--danger);
+  font-size: 14px;
+  padding: 5px 9px;
+}
+
+.btn-delete:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--brown);
+  opacity: .7;
+}
+
+.login-error {
+  color: var(--danger);
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+  display: none;
+}

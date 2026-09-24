@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مسمنة طبيعية - اطلب الآن</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="brand">🌿 مسمنة طبيعية</div>
+  </header>
+
+  <div class="container">
+
+    <section class="hero">
+      <!-- ضع صورة منتجك هنا، سمِّها product.jpg وضعها بجانب هذا الملف -->
+      <img src="product.jpg" alt="مسمنة طبيعية">
+      <h1>مسمنة طبيعية 100%</h1>
+      <p class="tagline">لزيادة الوزن بشكل صحي وآمن، مكونات طبيعية بدون آثار جانبية</p>
+    </section>
+
+    <section class="offers">
+      <h2>اختر عرضك</h2>
+      <div class="offer-grid">
+        <div class="offer-card" data-qty="1" data-price="2800">
+          <div class="qty">علبة واحدة g150</div>
+          <div class="price">2800 <span>دج</span></div>
+        </div>
+        <div class="offer-card" data-qty="2" data-price="5000">
+          <div class="badge">الأكثر طلباً</div>
+          <div class="qty">علبتان </div>
+          <div class="price">5000 <span>دج</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="order-section">
+      <h2>أكمل معلوماتك لتأكيد الطلب</h2>
+      <form id="orderForm">
+        <div class="field">
+          <label for="fullName">الاسم الكامل</label>
+          <input type="text" id="fullName" required placeholder="مثال: أحمد بن علي">
+        </div>
+        <div class="field">
+          <label for="phone">رقم الهاتف</label>
+          <input type="tel" id="phone" required placeholder="05XXXXXXXX" pattern="0[5-7][0-9]{8}">
+        </div>
+        <div class="field">
+          <label for="wilaya">الولاية</label>
+          <input type="text" id="wilaya" required placeholder="مثال: البليدة">
+        </div>
+        <div class="field">
+          <label for="address">العنوان بالتفصيل (أو أقرب مكتب توصيل)</label>
+          <textarea id="address" rows="2" required placeholder="الحي، الشارع، أقرب نقطة معروفة"></textarea>
+        </div>
+
+        <div class="total-line">
+          العرض المختار: <strong id="totalDisplay">— اختر عرضاً أعلاه —</strong>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn" disabled>أطلب الآن</button>
+        <div class="form-msg" id="formMsg"></div>
+      </form>
+    </section>
+
+  </div>
+
+  <footer>الدفع عند الاستلام — سيتصل بك فريقنا لتأكيد الطلب</footer>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
